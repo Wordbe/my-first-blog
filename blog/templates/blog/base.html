@@ -54,16 +54,32 @@
 
 <body>
     <div class="page-header">
-        <h1><a href="/">Django Girls Blog</a></h1>
+        {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
+        <h1><a href="/">Fullybea's Blog</a></h1>
     </div>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
+                {% block content %}
+                {% endblock %}
             </div>
-        </div>
+           </div>
     </div>
+    <div>
+        <p>published: 15.09.2018, 11:29</p>
+        <h2><a href="www.naver.com">naver</a></h2>
+        <p>test</p>
+
+        <h2><a href="admin">Goto Administrator</a></h2>
+
+        <h2>Brown Bear</h2>
+        <video src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-1/lesson-2/htmlcss1-vid_brown-bear.mp4" width="320" height="240" controls>
+            Video not supported
+        </video>
+    </div>
+
 </body>
 
 </html>
